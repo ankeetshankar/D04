@@ -20,7 +20,14 @@
 
 
 # Body
+def count(string, letter):
+	word = string
+	counter = 0
+	for letter1 in word:
+		if letter1 == letter:
+			counter = counter +1
 
+	print (counter)
 
 ###############################################################################
 def main():
@@ -28,6 +35,15 @@ def main():
     # Remove print("Hello World!") and add several functions calls to count()
     # below, passing various strings and letters
     print("Hello World!")
+    count("Ankeet","e")
+    print("\n")
+    count("MIMS","M")
+    print("\n")
+    count("USA","U")
+    print("\n")
+    print("End of Program")
+    print("*" * 70)
+    
 
 
 if __name__ == '__main__':

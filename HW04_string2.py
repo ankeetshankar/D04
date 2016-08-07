@@ -18,9 +18,23 @@
 # Return the resulting string.
 def verbing(s):
     # +++your code here+++
-    return
+    length = len(s)
+    addition1 = "ing"
+    addition2 = "ly"
+    #Addition 1 and Addition 2 will be concatenated with the existing word depending on the conditions specified in the question. 
+    if (length  > 3 or length ==3) and s[-3:] != "ing":
+        final_string = s + addition1
+        return final_string
+        
 
+    elif (length  > 3 or length ==3)and s[-3:] =="ing":
+        final_string = s + addition2
+        return final_string
+        
 
+    else :
+        return s
+    
 # E. not_bad
 # Given a string, find the first appearance of the
 # substring 'not' and 'bad'. If the 'bad' follows
@@ -30,8 +44,19 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
+    p1 = s.find("not")
+    p2 = s.find("bad")
+
+    if p2 > p1:
+        z = s[0:p1-1] + " good" +s[p2+3:]
+        
+        return z
+
+
+    else:
+        return s
+
     # +++your code here+++
-    return
 
 
 # F. front_back
@@ -42,8 +67,27 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
+    if (len(a)%2) == 0:
+        a_front = a[0:(len(a))//2]
+        a_back = a[((len(a))//2):]
+
+    else:
+        a_front = a[0:((len(a)//2)+1)]
+        a_back = a[((len(a)//2)):]
+
+    if (len(b)%2) == 0:
+        b_front = b[0:(len(b))//2]
+        b_back = b[((len(b))//2)+1:]
+
+    else:
+        b_front = b[0:((len(b)//2)+1)]
+        b_back = b[((len(b)//2)+1):]
+
+    return a_front + " " + b_front +" "+ a_back +" "+ b_back
+
+
+
     # +++your code here+++
-    return
 
 
 # Simple provided test() function used in main() to print
